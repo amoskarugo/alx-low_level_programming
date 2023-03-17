@@ -16,15 +16,15 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	if (n == 0)
 	{
-	printf(n, "\tis\tzero");
+	printf("%i is zero", n);
 	}
 	else if (n > 0)
 	{
-	printf(n, "\tis\tpositive");
+	printf("%i is positive", n);
 	}
 	else
 	{
-	printf(n, "\tis\tnegative");
+	printf("%i is negative", n);
 	}
 	return (0);
 }
