@@ -23,7 +23,6 @@ putchar(l_d);
 if (c != 789)
 {
 putchar(',');
-putchar(' ');
 }
 }
 c++;
