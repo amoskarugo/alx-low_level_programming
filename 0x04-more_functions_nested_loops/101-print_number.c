@@ -22,5 +22,5 @@ void print_number(int n)
 		print_number(num / 10);
 
 	/*print the last digit*/
-	_putchar((num % 10) + 48);
+	putchar((num % 10) + 48);
 }
