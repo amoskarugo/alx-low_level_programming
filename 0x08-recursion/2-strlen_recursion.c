@@ -1,5 +1,5 @@
 
- 
+
 
 #include "main.h"
 
@@ -10,11 +10,6 @@
  */
 
 int _strlen_recursion(char *s);
-
-int main(void)
-{
-	_strlen_recursion("hello world");
-}
 
 /**
  * _strlen_recursion - function definition
