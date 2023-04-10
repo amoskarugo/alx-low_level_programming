@@ -4,8 +4,8 @@
 /**
 *main - a program that prints all arguments
 *
-*@argc:
-*@argv:
+*@argc: number of arguments
+*@argv: parameters
 *
 *Return: always return 0 (success)
 */
