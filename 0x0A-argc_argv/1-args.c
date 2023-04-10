@@ -9,7 +9,7 @@
 *
 *Return: always 0 (success)
 */
-int main(int __attribute__((unused)) argc, char *argv[])
+int main(int argc, char __attribute__((unused)) *argv)
 {
 
 	int count = 0;
