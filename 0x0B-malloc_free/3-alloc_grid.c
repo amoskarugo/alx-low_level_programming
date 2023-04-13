@@ -21,29 +21,21 @@ if (width < 1)
 if (height < 1)
 	return (NULL);
 
-*arr = malloc(sizeof(int *) * height);
+*arr = (int **)malloc(sizeof(int *) * height);
 
 if (arr == NULL)
 	return (NULL);
 
 for (i = 0; i < height; i++)
 {
-	arr[i] = malloc(width * sizeof(int));
-	if (arr[i] == NULL)
-	{
-		while (i >= 0)
-		{
-			free(arr[i];
-			i--;
-		}
-		free(arr)
-		return (NULL);
-	}
+	arr[i] = (int *)malloc(width * sizeof(int));
 	for (j = 0; j < width; j++)
 	{
 	arr[i][j] = 0;
+	free(arr[i];
 	}
 }
+	free(arr);
 
 	return (arr);
 
