@@ -1,4 +1,4 @@
-#include <stdlid.h>
+#include <stdlib.h>
 #include <stdio.h>
 /**
 *str_concat - function to concatonate two strings
