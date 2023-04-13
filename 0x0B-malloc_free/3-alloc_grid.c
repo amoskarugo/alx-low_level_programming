@@ -21,7 +21,7 @@ if (width < 1)
 if (height < 1)
 	return (NULL);
 
-arr = malloc(sizeof(int *) * height);
+*arr = malloc(sizeof(int *) * height);
 
 if (arr == NULL)
 	return (NULL);
