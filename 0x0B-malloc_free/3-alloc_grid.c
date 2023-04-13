@@ -32,7 +32,7 @@ for (i = 0; i < height; i++)
 	for (j = 0; j < width; j++)
 	{
 	arr[i][j] = 0;
-	free(arr[i];
+	free(arr[i]);
 	}
 }
 	free(arr);
