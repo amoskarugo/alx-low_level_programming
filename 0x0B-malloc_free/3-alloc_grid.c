@@ -21,7 +21,7 @@ if (width < 1)
 if (height < 1)
 	return (NULL);
 
-*arr = (int **)malloc(sizeof(int *) * height);
+arr = (int **)malloc(sizeof(int *) * height);
 
 if (arr == NULL)
 	return (NULL);
