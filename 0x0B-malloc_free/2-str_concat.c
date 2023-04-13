@@ -39,7 +39,7 @@ char *str_concat(char *s1, char *s2)
 		i++;
 	}
 
-	newStr[j] = '\0';
+	newStr[i] = '\0';
 	return (newStr);
 
 
