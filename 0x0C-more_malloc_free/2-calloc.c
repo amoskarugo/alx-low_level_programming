@@ -20,9 +20,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	arr = malloc(nmemb * size);
-
 	if (arr == NULL)
 		return (NULL);
+
 	for (i = 0; j < (nmemb * size); i++)
 		arr[j] = 0;
 
