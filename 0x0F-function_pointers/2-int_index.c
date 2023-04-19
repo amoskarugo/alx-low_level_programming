@@ -6,7 +6,7 @@
  * int_index - a function that searches for an integer
  *
  * @array: array pointer
- * @size: size of array
+ * @size: size of @array
  * @cmp: pointer to function call that checsk if index in an array
  *       matches
  *
@@ -17,7 +17,10 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int index;
+
+
 	bool bol;
+
 
 	if (array != NULL && size > 0 && cmp != NULL)
 	{
