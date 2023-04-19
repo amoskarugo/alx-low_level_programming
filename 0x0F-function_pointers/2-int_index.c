@@ -1,5 +1,7 @@
-#include "function_pointers.h"
+#include<stdbool.h>
 #include <stddef.h>
+#include "function_pointers.h"
+
 
 
 /**
@@ -29,7 +31,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 		for (index = 0; index < size; index++)
 		{
 			bol = cmp(array[index]);
-			if (bol == TRUE)
+			if (bol == true)
 				return (index);
 		}
 	}
