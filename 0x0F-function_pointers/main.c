@@ -66,6 +66,7 @@ int op_mod(int x, int y)
 
 int (*get_op_func(char *s))(int, int)
 {
+
 	opt operators[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -76,9 +77,9 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (i < 5)
+	while (operators[i].op)
 	{
-		if (*s == *operators[i].op)
+		if (*(operators[i].op) == *s)
 			return (operators[i].f);
 		i++;
 	}
