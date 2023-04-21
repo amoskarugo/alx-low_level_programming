@@ -9,6 +9,7 @@
  */
 typedef struct op
 {
+
 	char *op;
 	int (*f)(int x, int y);
 } opt;
