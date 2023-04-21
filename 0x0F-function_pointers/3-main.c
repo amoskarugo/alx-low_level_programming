@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "3-calc.h"
+#include<stddef.h>
 /**
  * main - get_op_func has operators correlated with
  * func signs and funcs from op_func
@@ -12,6 +12,7 @@
  * @argv:  pointer to an array of string of arguments
  * Return: 0
  */
+
 int main(int argc, char *argv[])
 {
 	int num1, num2, ans;
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error\n");
+		printf("Error3\n");
 		exit(98);
 	}
 
@@ -28,21 +29,21 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	get_op = argv[2];
 
-	/* added edge case if argv[2] was longer than 1 char*/
+
 	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
 	{
-		printf("Error\n");
+		printf("Error2\n");
 		exit(99);
 	}
 
 	if ((*get_op == '/' || *get_op == '%') && (*argv[3] == '0'))
 	{
-		printf("Error\n");
+		printf("Error1\n");
 		exit(100);
 	}
 
 	result = get_op_func(get_op);
-	ans = res(num1, num2);
+	ans = result(num1, num2);
 
 	printf("%d\n", ans);
 	return (0);
