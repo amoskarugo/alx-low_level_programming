@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include<stddef.h>
-#include "3-calc.h"
 
 
 /**
@@ -15,11 +14,80 @@
  * @argv:  pointer to an array of string of arguments
  * Return: 0
  */
+typedef struct op
+{
+	char *op;
+	int (*f)(int a, int b);
+} opt;
+int op_add(int x, int y)
+{
+	return (x + y);
+}
+/**
+ * op_sub - subtract function
+ * @x: input one
+ * @y: input two
+ * Return: 0
+ */
+int op_sub(int x, int y)
+{
+	return (x - y);
+}
+/**
+ * op_mul - multiplication function
+ * @x: input one
+ * @y: input two
+ * Return: 0
+ */
+int op_mul(int x, int y)
+{
+	return (x * y);
+}
+/**
+ * op_div - division function
+ * @x: input one
+ * @y: input two
+ * Return: 0
+ */
+int op_div(int x, int y)
+{
+	return (x / y);
+}
+/**
+ * op_mod - modulous function
+ * @x: input one
+ * @y: input two
+ * Return: 0
+ */
+int op_mod(int x, int y)
+{
+	return (x % y);
+}
 
+int (*get_op_func(char *s))(int, int)
+{
+	opt operators[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
+
+	while (i < 5)
+	{
+		if (*s == *operators[i].op)
+			return (operators[i].f);
+		i++;
+	}
+
+	return (NULL);
+}
 
 int main(int argc, char *argv[])
 {
-
 	int num1, num2, ans;
 	int (*result)(int, int);
 	char *get_op;

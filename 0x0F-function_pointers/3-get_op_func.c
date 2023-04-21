@@ -15,6 +15,7 @@
 
 int (*get_op_func(char *s))(int, int)
 {
+
 	opt operators[] = {
 		{"+", op_add},
 		{"-", op_sub},
