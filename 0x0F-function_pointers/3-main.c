@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include<stddef.h>
+
 #include "3-calc.h"
 
 
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error3\n");
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -37,13 +37,13 @@ int main(int argc, char *argv[])
 
 	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if ((*get_op == '/' || *get_op == '%') && (*argv[3] == '0'))
 	{
-		printf("Error1\n");
+		printf("Error\n");
 		exit(100);
 	}
 
