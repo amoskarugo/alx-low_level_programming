@@ -1,8 +1,8 @@
+#include "3-calc.h"
+
 #include <stddef.h>
 #include<stdio.h>
 #include<stdlib.h>
-#include "3-calc.h"
-
 
 /**
 *get_op_func - its a fuction pointer of the type char array that recives two

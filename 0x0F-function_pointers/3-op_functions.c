@@ -1,6 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
+#include <stddef.h>
+#include<stdio.h>
+#include<stdlib.h>
+
 /**
  * op_add - add function
  * @x: input one
