@@ -3,7 +3,7 @@
 /**
  * print_list - print elements in a linked list
  *
- * @h: pointer to head first node
+ * @h: pointer to head  node
  *
  * Return: Number of nodes
 */
