@@ -2,6 +2,21 @@
 #include "lists.h"
 
 /**
+ * strlength - determines the length of a string
+ * @s: string to get length
+ *
+ * Return: the length of the string
+ */
+int strlength(const char *s)
+{
+	int j = 0;
+
+	while (s[j] != '\0')
+		j++;
+	return (j);
+}
+
+/**
  * add_node_end - adds a node to the end of a linked list
  * @head: pointer to the head node
  * @str: string to be used as content of the newly added node
@@ -22,10 +37,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 		return (NULL);
-	if (cursor != NULL)
+	if (focus != NULL)
 	{
 		while (focus->next != NULL)
-			focus = cursor->next;
+			focus = focus->next;
 		focus->next = _new;
 	}
 	else
@@ -33,17 +48,4 @@ list_t *add_node_end(list_t **head, const char *str)
 	return (_new);
 }
 
-/**
- * strlength - determines the length of a string
- * @s: string to get length
- *
- * Return: the length of the string
- */
-int strlength(const char *s)
-{
-	int j = 0;
 
-	while (s[j] != '\0')
-		j++;
-	return (j);
-}
