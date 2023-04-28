@@ -1,8 +1,8 @@
-global _start
+global main
 
 section .text
 
-_start:
+main:
   mov rax, 1
   mov rdi, 1
   mov rsi, msg
@@ -14,5 +14,5 @@ _start:
   syscall
 
 section .rodata
-  msg: db "Hello, Holberton\n", 10
+  msg: db "Hello, Holberton", 10
   msglen: equ $ - msg
