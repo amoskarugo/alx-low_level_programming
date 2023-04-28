@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include "function_pointers.h"
 /**
- * print_name - f points to either func in main
+ * print_name - fuction to print name
  * @name: name
- * @f: pointer to print upp or non upp func
+ * @f: fuction pointer
  * Return: void
  */
 void print_name(char *name, void (*f)(char *))
