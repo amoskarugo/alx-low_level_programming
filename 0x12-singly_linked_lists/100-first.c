@@ -5,7 +5,7 @@ void start_up_func(void)__attribute__((constructor));
 /**
  * start_up_func - function executes before main function
  *
- * Return: void
+ * Return: void/Nothing
  */
 void start_up_func(void)
 {
