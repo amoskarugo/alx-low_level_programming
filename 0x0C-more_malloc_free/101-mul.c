@@ -25,7 +25,7 @@ char *create_memory(char *s, char c, unsigned int n)
 }
 
 /**
- * arr_alloc - function that allocates memory
+ * _calloc - function that allocates memory
  *           for an array using create memory
  *
  * @arr_size: size of the array
@@ -34,16 +34,16 @@ char *create_memory(char *s, char c, unsigned int n)
  * Return: pointer to new allocated memory
 */
 
-void *arr_alloc(unsigned int arr_size, unsigned int size)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
 
-	if (arr_size == 0 || size == 0)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptr = malloc(arr_size * size);
+	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	create_memory(ptr, 0, arr_size * size);
+	create_memory(ptr, 0, nmemb * size);
 
 	return (ptr);
 }
@@ -68,7 +68,7 @@ void mul(char *string1, char *string2)
 	length2 = length(string2);
 	tmp = length2;
 	total = length1 + length2;
-	ptr = arr_alloc(sizeof(int), total);
+	ptr = _calloc(sizeof(int), total);
 
 	temp = ptr;
 

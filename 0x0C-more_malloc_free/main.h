@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,7 +27,6 @@ int exit_code(void)
 	err = "Error";
 	for (i = 0; err[i] != '\0'; i++)
 		_putchar(err[i]);
-		printf("%c\n", err[i]);
 	_putchar('\n');
 	exit(98);
 }
