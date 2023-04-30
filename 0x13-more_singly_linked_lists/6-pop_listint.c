@@ -9,18 +9,18 @@
 */
 int pop_listint(listint_t **head)
 {
-    int node1_data;
-    listint_t *makeshift, *next;
+int node1_data;
+listint_t *makeshift, *next;
 
-    if (*head == NULL)
-        return (0);
+if (*head == NULL)
+	return (0);
 
-    makeshift = *head;
-    next = makeshift->next;
-    node1_data = makeshift->n;
+makeshift = *head;
+next = makeshift->next;
+node1_data = makeshift->n;
 
-    free(makeshift);
-    *head = next;
+free(makeshift);
+*head = next;
 
-    return (node1_data);
+return (node1_data);
 }
