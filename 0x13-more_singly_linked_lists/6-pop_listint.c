@@ -17,7 +17,7 @@ int pop_listint(listint_t **head)
 
     makeshift = *head;
     next = makeshift->next;
-    node1_data = temp->n;
+    node1_data = makeshift->n;
 
     free(makeshift);
     *head = next;
