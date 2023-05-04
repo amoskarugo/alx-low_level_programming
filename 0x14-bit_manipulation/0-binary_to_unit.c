@@ -1,56 +1,48 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
- * _atoi - converts chars to integer
+ * check_string - checks if a string has only 0's and 1's
+ * @s: string to be checked
  *
- * @c: char to convert
- *
- * Return: converted integer
-*/
-unsigned int _atoi(char c)
+ * Return: 1 if string is valid, 0 otherwise
+ */
+int check_string(const char *s)
 {
-	return ((unsigned int) c - '0');
+	if (s == NULL)
+		return (0);
+	while (*s)
+	{
+		if (*s != '1' && *s != '0')
+			return (0);
+		s++;
+	}
+
+	return (1);
 }
 
-/**
- * str_len - gets the length of a string
- *
- * @str: string input
- *
- * Return: string length
-*/
-unsigned int str_len(const char *str)
-{
-	unsigned int position = 0;
-
-	while (str[position] != '\0')
-		position++;
-	return (position);
-}
 
 /**
- * binary_to_uint - Converts a binary number to decimal.
+ * binary_to_uint - converts a binary to decimal
+ * @b: the binary values
  *
- * @b: A string that contains only 0 and 1 characters.
- *
- * Returns: return decimal number or null
+ * Return: decimal number or NULL
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int output = 0;
-	unsigned int base = 1;
-	int j;
+	unsigned int decimal = 0;
+	int len = 0, base = 1;
 
-  if (b == NULL) {
-    return 0;
-  }
+	if (!check_string(b))
+		return (0);
+	while (b[len] != '\0')
+		len++;
+	while (len)
+	{
+		decimal += ((b[len - 1] - '0') * base);
+		base *= 2;
+		len--;
+	}
 
-  for (j = str_len(b) - 1; j >= 0; j--) {
-    if (b[j] != '0' && b[j] != '1') {
-      return 0;
-    }
-    output = output * 2 + (b[j] - '0');
-  }
-
-  return output;
+	return (decimal);
 }
