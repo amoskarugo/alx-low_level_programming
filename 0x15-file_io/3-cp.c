@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * close_files - prints error
- * @pf1_err: error in closing pf1
- * @pf1: file descriptor
- * @pf2_err: error in closing pf2
- * @pf2: file descriptor
+ * cls - error check
+ * @file1_err: error in closing file1
+ * @file1: file descriptor
+ * @file2_err: error in closing file2
+ * @file2: file descriptor
  */
 
-void	close_files(int pf1_err, int pf1, int pf2_err, int pf2)
+void	cls(int file1_err, int file1, int file2_err, int file2)
 {
-	if (pf1_err == -1)
+	if (file1_err == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", pf1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file1);
 		exit(100);
 	}
-	if (pf2_err == -1)
+	if (file2_err == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", pf2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file2);
 		exit(100);
 	}
 }
@@ -25,14 +25,14 @@ void	close_files(int pf1_err, int pf1, int pf2_err, int pf2)
 /**
  * main - entry point
  * @argc: arguments count
- * @argv: arguments
+ * @argv: pointer to array of arguments
  * Return: 0
  */
 
 int main(int argc, char *argv[])
 {
-	int	pf1, pf1_err, w;
-	int	pf2, pf2_err, r = 1024;
+	int	file1, file1_err, wrt;
+	int	file2, file2_err, rd = 1024;
 	char	buff[1024];
 
 	if (argc != 3)
@@ -40,35 +40,35 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
-	pf1 = open(argv[1], O_RDONLY);
-	if (pf1 == -1)
+	file1 = open(argv[1], O_RDONLY);
+	if (file1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
-	pf2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (pf2 == -1)
+	file2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (file2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		return (99);
 	}
-	while (r == 1024)
+	while (rd == 1024)
 	{
-		r = read(pf1, buff, 1024);
-		if (r == -1)
+		rd = read(file1, buff, 1024);
+		if (rd == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			return (98);
 		}
-		w = write(pf2, buff, r);
-		if (w == -1)
+		wrt = write(file2, buff, rd);
+		if (wrt == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			return (99);
 		}
 	}
-	pf1_err = close(pf1);
-	pf2_err = close(pf2);
-	close_files(pf1_err, pf1, pf2_err, pf2);
+	file1_err = close(file1);
+	file2_err = close(file2);
+	cls(file1_err, file1, file2_err, file2);
 	return (0);
 }
