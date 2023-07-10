@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
 
 /**
  * cp - copies src to desinations
