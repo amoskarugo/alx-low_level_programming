@@ -1,12 +1,6 @@
 
 
-all: final
-
-final: school.o
-	gcc school.o -o school
-
-school.o: school.c
-	gcc -c school.c
-
+all:
+	gcc school.c -o school
 claen:
 	rm school.o school
