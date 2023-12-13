@@ -78,6 +78,9 @@ int binary_search(int *array, size_t size, int value)
 	int start = 0;
 	int end = size - 1;
 
+	if (!array)
+		return (-1);
+
 	return (recursive_search(array, value, start, end));
 
 }
